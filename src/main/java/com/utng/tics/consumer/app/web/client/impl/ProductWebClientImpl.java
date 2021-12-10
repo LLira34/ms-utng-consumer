@@ -24,9 +24,9 @@ public class ProductWebClientImpl implements ProductWebClient {
     @Override
     public Flux<ProductDTO> findAll() {
         return webClient
-                .get()
-                .accept(MediaType.APPLICATION_JSON)
-                .exchangeToFlux(clientResponse -> clientResponse.bodyToFlux(ProductDTO.class));
+            .get()
+            .accept(MediaType.APPLICATION_JSON)
+            .exchangeToFlux(clientResponse -> clientResponse.bodyToFlux(ProductDTO.class));
     }
 
     @Override
@@ -35,20 +35,20 @@ public class ProductWebClientImpl implements ProductWebClient {
         params.put("id", id);
 
         return webClient
-                .get()
-                .uri("/{id}", params)
-                .accept(MediaType.APPLICATION_JSON)
-                .exchangeToMono(clientResponse -> clientResponse.bodyToMono(ProductDTO.class));
+            .get()
+            .uri("/{id}", params)
+            .accept(MediaType.APPLICATION_JSON)
+            .exchangeToMono(clientResponse -> clientResponse.bodyToMono(ProductDTO.class));
     }
 
     @Override
     public Mono<ProductDTO> insert(ProductDTO productDTO) {
         return webClient
-                .post()
-                .accept(MediaType.APPLICATION_JSON)
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue(productDTO)
-                .exchangeToMono(clientResponse -> clientResponse.bodyToMono(ProductDTO.class));
+            .post()
+            .accept(MediaType.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
+            .bodyValue(productDTO)
+            .exchangeToMono(clientResponse -> clientResponse.bodyToMono(ProductDTO.class));
     }
 
     @Override
@@ -57,19 +57,19 @@ public class ProductWebClientImpl implements ProductWebClient {
         params.put("id", id);
 
         return webClient
-                .put()
-                .uri("/{id}", params)
-                .accept(MediaType.APPLICATION_JSON)
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue(productDTO)
-                .exchangeToMono(clientResponse -> clientResponse.bodyToMono(ProductDTO.class));
+            .put()
+            .uri("/{id}", params)
+            .accept(MediaType.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
+            .bodyValue(productDTO)
+            .exchangeToMono(clientResponse -> clientResponse.bodyToMono(ProductDTO.class));
     }
 
     @Override
     public Mono<Void> delete(String id) {
         return webClient
-                .delete()
-                .uri("/{id}", Collections.singletonMap("id", id))
-                .exchangeToMono(clientResponse -> clientResponse.bodyToMono(Void.class));
+            .delete()
+            .uri("/{id}", Collections.singletonMap("id", id))
+            .exchangeToMono(clientResponse -> clientResponse.bodyToMono(Void.class));
     }
 }
