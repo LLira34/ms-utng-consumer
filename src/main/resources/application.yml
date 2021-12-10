@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+application:
+  client:
+    siscomAsync:
+      protocol: http
+      host: localhost
+      port: 8080
+      basePath: /api/v2/products
+      url: ${application.client.siscomAsync.protocol}://${application.client.siscomAsync.host}:${application.client.siscomAsync.port}${application.client.siscomAsync.basePath}
