@@ -8,11 +8,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class BaseWebClient {
 
-    @Value("${application.client.siscomAsync.url}")
-    private String siscomAsyncUrl;
+    @Value("${application.client.product.url}")
+    private String productUrl;
 
     @Bean
-    public WebClient webClientSiscomAsync() {
-        return WebClient.create(siscomAsyncUrl);
+    public WebClient webClientProduct() {
+        return WebClient.create(productUrl);
     }
 }

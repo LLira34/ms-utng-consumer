@@ -4,7 +4,7 @@ import com.utng.tics.consumer.app.dto.ProductDTO;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface SiscomAsyncWebClient {
+public interface ProductWebClient {
 
     Flux<ProductDTO> findAll();
 

@@ -1,7 +1,7 @@
 package com.utng.tics.consumer.app.web.client.impl;
 
 import com.utng.tics.consumer.app.dto.ProductDTO;
-import com.utng.tics.consumer.app.web.client.SiscomAsyncWebClient;
+import com.utng.tics.consumer.app.web.client.ProductWebClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
@@ -15,10 +15,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class SiscomAsyncWebClientImpl implements SiscomAsyncWebClient {
+public class ProductWebClientImpl implements ProductWebClient {
 
     @Autowired
-    @Qualifier("webClientSiscomAsync")
+    @Qualifier("webClientProduct")
     private WebClient webClient;
 
     @Override
